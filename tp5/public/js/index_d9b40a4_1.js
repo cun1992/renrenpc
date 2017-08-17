@@ -40,7 +40,6 @@
             //UplanIndex.prototype.calAnimateAndSetV=function(data){for(var _this=this,
             //     uplanPeriodArr=this.uplanPeriodArr,length=this.uplanPeriodArr.length,i=0;length>i;i++){
             //    var period=uplanPeriodArr[i],width=_this.getWidth(i);$("#income"+period).animate({width:width},800);var rv="v"+period,v=data?data[rv]?data[rv]:"0.00":0;_this.setIncomeV(period,v)}},UplanIndex.prototype.setIncomeV=function(period,v){v+="元",$("#incomeV"+period).text(v)},UplanIndex.prototype.getWidth=function(index){var width="35px";switch(index){case 1:width="51px";break;case 2:width="90px";break;case 3:width="109px";break;case 4:width="138px";break;case 5:width="185px";break;default:width="35px"}return width},UplanIndex.prototype.updateAnimate=function(){$(".cal-income").animate({width:"0px"})},UplanIndex.prototype.bindCalEvent=function(){var _this3=this;this.$uplanAmount.on("keyup",function(){_this3.validate(_this3.$uplanAmount,_this3.$uplanAmountErrorlabel)}),this.$calcbt.on("click",function(){_this3.cal()})},UplanIndex.prototype.validate=function($amountObj,$errorMsg){var value=$amountObj.val();return $amountObj.val(value.replace(/\D/g,"")),/^\d{1,}$/.test(value)&&value%1e3==0&&0!=value?($errorMsg.css("visibility","hidden"),$amountObj.removeClass("error-input").addClass("success-input"),!0):($errorMsg.css("visibility","visible"),$amountObj.removeClass("success-input").addClass("error-input"),!1)},UplanIndex}(),uplanIndex=new UplanIndex;module.exports=uplanIndex});
-
 $(function(){
     $.ajax({
         type:"get",
@@ -55,9 +54,8 @@ $(function(){
                 if(v.productResid <=0){
                     str+='<a class="cover" href="http://www.shixun.com/tp5/public/viewdetails?id='+ v.id+'" target="_blank">'
                 }else{
-                    str+='<a class="cover" href="http://www.shixun.com" target="_blank">'
+                    str+='<a class="cover" href="http://www.shixun.com/tp5/public/viewdetails?id='+ v.id+'" target="_blank">'
                 }
-
                 str+='<p class="time">'
                 str+='<span class="month"><img src="picture/time_53c7a37_1.png"/><em>'+ v.deadline+'个月</em></span>'
                 str+='<img src="picture/uplan_xian_f5e9d9a_1.png" class="xian">'
@@ -73,7 +71,6 @@ $(function(){
                 }else{
                     str+='<em ><i></i>查看详情</em>'
                 }
-
                 str+='</p>'
                 str+='</a>'
                 str+='</li>'
@@ -81,11 +78,8 @@ $(function(){
             str+='</ul>'
             $('.uplan-list-less').html(str);
         }
-
-
     })
 })
-
 
 
 $("#uplanAmount").bind("input ", function() {
