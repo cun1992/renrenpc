@@ -17,9 +17,6 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-
-
-
 //首页
     'index'=>'index/index/index',
 //    u计划的路由
@@ -30,4 +27,14 @@ return [
     'autoinvest'=>'index/autoinvest/autoinvest',
 //    登录注册路由
     'login'=>'index/login/login',
+//测试数据
+    'mist'=>'index/uplan/mist',
+//U计划列表数据接口
+    'uplanlist'=>'index/uplan/uplanlist',
+//U计划获取当前期数
+    'getuplan'=>'index/uplan/getuplan',
+//查看详情接入点
+    'viewdetails'=>'index/uplan/viewdetails',
+//立即加入接入点
+    ''=>'',
 ];
