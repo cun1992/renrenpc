@@ -98,11 +98,11 @@
             $(document).on('click','#subNotLoginFindPswResetPswBt',function(){
                 var newpwd=$('#newpwd').val();
                 var confirmpwd=$('#confirmpwd').val();
-                var reg=/^[a-zA-Z]\w{5,17}$/
+                var reg=/^[a-zA-Z]\w{5,17}$/;
                 if(!reg.test(newpwd)){
                     $('.error_a').html("<font color='red'>密码格式不正确！</font>");
                 }else{
-                    $('.error_a').html("<font color='green'>密码正确！</font>");
+                    $('.error_a').html("<font color='green'>密码格式正确！</font>");
                 }
             })
         </script>
