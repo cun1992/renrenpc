@@ -1,0 +1,133 @@
+
+
+
+            
+        
+
+        <div class="main-content">
+
+            
+
+
+
+<div class="wdg-account-header-widget">
+    <div class="main-section">
+        <ul class="account-menu fn-clear">
+            <!--网站拆分，werenrendai.com和we.com展示不同的header-->
+            
+                <li class=" "><a href="https://www.renrendai.com/pc/user/account/p2p/index">P2P资产</a></li>
+                <li class=" "><a href="https://www.renrendai.com/pc/user/privilege">我的特权</a></li>
+                <li class=" "><a href="https://www.renrendai.com/pc/user/message/list">消息中心</a> <span class="org fn-hide">(0)</span></li>
+                <li class="active"><a href="https://www.renrendai.com/pc/user/setting/accountInfo">账户设置</a></li>
+                <li class="last"><a href="https://www.we.com/pc/user/account/home/myAccount">返回we理财账户</a></li>
+                
+            
+        </ul>
+    </div>
+</div>
+
+
+<div id="pg-account-security" class="main-section j-card">
+
+    
+    
+
+    
+    <div id="pg-findPsw">
+        <div class="content">
+            
+            <div id="findpwd-step-nav">
+    <div class="setting-section-title title-no-border">找回密码</div>
+    <div class="step-list-con">
+        <ul class="step-list fn-clear current-step2">
+            <li class="step-item item-step1">
+              <span class="step-index num-family">1</span>
+              填写账户名
+            </li>
+            <li class="step-item item-step2">
+              <span class="step-index num-family">2</span>
+              验证身份
+            </li>
+            <li class="step-item item-step3">
+              <span class="step-index num-family">3</span>
+              设置新密码
+            </li>
+            <li class="step-item item-step4">
+              <span class="step-index num-family">4</span>
+              完成
+            </li>
+        </ul>
+    </div>
+</div>
+            
+            <form class="inputs" method="post" action="/pc/user/findpwd/findByMobile" id="notLoginFindPswByMobileCodeForm">
+                <input name="mobile" value="17600810177" id="mobileOrEmail" type="hidden">
+                <div class="ui-form-item-setting">
+                    <label class="ui-label-setting">手机号</label>
+                    <input name="validCode" id="phone" class="ui-input-setting randcode" placeholder="请输入手机号" autocomplete="off" type="text">
+                    <span class="dialog-value"></span>
+                </div>
+                <div class="ui-form-item-setting">
+                    <label class="ui-label-setting">验证码</label>
+                    <input name="validCode" id="validCode" class="ui-input-setting randcode" placeholder="请输入验证码" autocomplete="off" type="text">
+                    <label for="validCode" class="error"></label>
+                </div>
+                <div class="ui-form-item-setting btn-wrap">
+                    <span id="btn" class="j-setting-btn j-btn">验证</span>
+                </div>
+                <div class="find-by-mobile">
+                    如果您在30秒内没有收到验证码，请<span class="getMobileCode" id="getMobileCode">获取验证码</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        </div>
+        <script>
+            $(document).on('click','#getMobileCode',function(){
+//                验证手机号
+                var phone=$('#phone').val();
+                var reg=/^1[34578]\d{9}$/;
+                if(!reg.test(phone)){
+                    $('.dialog-value').html("<font color='red'>手机号格式不正确！</font>");
+                    return false;
+                }else{
+                    $('.dialog-value').html("<font color='green'>手机号正确！</font>");
+                }
+//                获取手机验证码
+                $.ajax({
+                    url:"code",
+                    type:'post',
+                    dataType:'json',
+                    data:{tel:phone},
+                    success:function(msg){
+//                        alert(msg)
+                        $('#validCode').val(msg);
+                    }
+                })
+            })
+
+
+            $(document).on('click','#btn',function(){
+                var phone=$('#phone').val();
+                $.ajax({
+                    url:"idcard_add",
+                    type:'post',
+                    data:{tel:phone},
+                    success:function(msg){
+//                       alert(msg)
+                        if(msg==0){
+                            alert('手机号已存在或手机格式不对');
+                            return false;
+                        }else{
+                            window.location.href='newpwd';
+                        }
+                    }
+                })
+
+            })
+        </script>
+
+        
+
+        

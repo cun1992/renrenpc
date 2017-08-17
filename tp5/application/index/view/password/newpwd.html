@@ -1,0 +1,105 @@
+
+
+
+        <div class="main-content">
+
+            
+
+
+
+<div class="wdg-account-header-widget">
+    <div class="main-section">
+        <ul class="account-menu fn-clear">
+            <!--网站拆分，werenrendai.com和we.com展示不同的header-->
+            
+                <li class=" "><a href="https://www.renrendai.com/pc/user/account/p2p/index">P2P资产</a></li>
+                <li class=" "><a href="https://www.renrendai.com/pc/user/privilege">我的特权</a></li>
+                <li class=" "><a href="https://www.renrendai.com/pc/user/message/list">消息中心</a> <span class="org fn-hide">(0)</span></li>
+                <li class="active"><a href="https://www.renrendai.com/pc/user/setting/accountInfo">账户设置</a></li>
+                <li class="last"><a href="https://www.we.com/pc/user/account/home/myAccount">返回we理财账户</a></li>
+                
+            
+        </ul>
+    </div>
+</div>
+
+
+<div id="pg-account-security" class="main-section j-card">
+
+    
+    
+
+    
+    <div id="pg-findPsw">
+        <div class="content">
+            
+            <div id="findpwd-step-nav">
+    <div class="setting-section-title title-no-border">找回密码</div>
+    <div class="step-list-con">
+        <ul class="step-list fn-clear current-step3">
+            <li class="step-item item-step1">
+              <span class="step-index num-family">1</span>
+              填写账户名
+            </li>
+            <li class="step-item item-step2">
+              <span class="step-index num-family">2</span>
+              验证身份
+            </li>
+            <li class="step-item item-step3">
+              <span class="step-index num-family">3</span>
+              设置新密码
+            </li>
+            <li class="step-item item-step4">
+              <span class="step-index num-family">4</span>
+              完成
+            </li>
+        </ul>
+    </div>
+</div>
+            
+            <div class="inputs" id="notLoginFindPswResetPswForm">
+                <input name="email" value="" id="email" type="hidden">
+                <input name="mobile" value="17600810177" id="mobile" type="hidden">
+                <input name="validCode" value="614322" id="validCode" type="hidden">
+                <input name="type" value="FIND_PWD_MOBILE" id="fromType" type="hidden">
+                <div class="ui-form-item-setting">
+                    <label class="ui-label-setting">新密码</label>
+                    <input id="newpwd" name="password" class="ui-input-setting" placeholder="8~16位数字、字母或符号组合" autocomplete="off" type="password">
+                    <label for="newpwd" class="error"></label>
+                </div>
+                <div class="ui-form-item-setting">
+                    <label class="ui-label-setting">确认新密码</label>
+                    <input id="confirmpwd" name="confirmPassword" class="ui-input-setting" placeholder="8~16位数字、字母或符号组合" autocomplete="off" type="password">
+                    <label for="confirmpwd" class="error"></label>
+                </div>
+                <div class="ui-form-item-setting btn-wrap">
+                    <span id="subNotLoginFindPswResetPswBt" class="j-setting-btn j-btn">确定</span> 
+                </div>
+                <div class="catch-error"></div>
+            </div>
+
+            
+            <div class="success fn-hide">
+                <div class="modify-success-icon icon-we-success"></div>
+                <div class="setting-content">
+                    <span>恭喜，登录密码重置成功！</span>
+                </div>
+                <div class="btn-wrap">
+                    <a class="back-btn j-btn" href="https://www.renrendai.com/pc/passport/index/login" target="_self">去登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+        </div>
+        <script>
+            $(document).on('click','#subNotLoginFindPswResetPswBt',function(){
+                var newpwd=$('#newpwd').val();
+                
+            })
+        </script>
+
+        
+
